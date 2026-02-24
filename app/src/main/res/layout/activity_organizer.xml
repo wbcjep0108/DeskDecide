@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#f2f2f2">
+
+    <TextView
+        android:id="@+id/tv_org_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Organizer Dashboard"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_add_candidate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:backgroundTint="#80e5ff"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/tv_org_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/btn_remove_candidate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove"
+        android:backgroundTint="#80e5ff"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="@+id/btn_add_candidate"
+        app:layout_constraintStart_toEndOf="@+id/btn_add_candidate"
+        app:layout_constraintEnd_toStartOf="@+id/btn_view_records" />
+
+    <Button
+        android:id="@+id/btn_view_records"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refresh"
+        android:backgroundTint="#80e5ff"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/tv_org_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tv_rankings_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category Rankings:"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add_candidate"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btn_pres"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:text="President"
+        android:backgroundTint="#80e5ff"
+        android:textSize="12sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toStartOf="@+id/btn_vpres"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rankings_label" />
+
+    <Button
+        android:id="@+id/btn_vpres"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Vice Pres"
+        android:backgroundTint="#80e5ff"
+        android:textSize="12sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="@+id/btn_pres"
+        app:layout_constraintStart_toEndOf="@+id/btn_pres"
+        app:layout_constraintEnd_toStartOf="@+id/btn_sec"
+        android:layout_marginEnd="4dp"/>
+
+    <Button
+        android:id="@+id/btn_sec"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Secretary"
+        android:backgroundTint="#80e5ff"
+        android:textSize="12sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_vpres"
+        app:layout_constraintTop_toTopOf="@+id/btn_pres" />
+
+    <ListView
+        android:id="@+id/lv_records"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_pres"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
